@@ -4,18 +4,30 @@
     <p class="mx-6">Use all the pieces to complete the puzzle</p>
     <div class="grow"></div>
     <div class="relative border-4 mx-6">
-      <img class="w-full h-auto opacity-0" src="../assets/full.png" />
-      <img v-if="pieces[0]" class="absolute w-auto h-1/2 top-0 left-0" src="../assets/piece-1.png" />
-      <img v-if="pieces[1]" class="absolute w-1/2 h-auto top-0 right-0" src="../assets/piece-2.png" />
+      <img class="w-full h-auto opacity-0" src="../assets/full.png" alt="full picture" />
+      <img
+        v-if="pieces[0]"
+        class="absolute w-auto h-1/2 top-0 left-0"
+        src="../assets/piece-1.png"
+        alt="piece 1"
+      />
+      <img
+        v-if="pieces[1]"
+        class="absolute w-1/2 h-auto top-0 right-0"
+        src="../assets/piece-2.png"
+        alt="piece 2"
+      />
       <img
         v-if="pieces[2]"
         class="absolute w-1/2 h-auto bottom-0 left-0"
         src="../assets/piece-3.png"
+        alt="piece 3"
       />
       <img
         v-if="pieces[3]"
         class="absolute w-auto h-1/2 bottom-0 right-0"
         src="../assets/piece-4.png"
+        alt="piece 4"
       />
     </div>
     <div class="grow"></div>
@@ -28,24 +40,28 @@
         @click="addToPuzzle(0)"
         class="w-auto h-32"
         src="../assets/piece-1.png"
+        alt="slider piece 1"
       />
       <img
         v-if="!pieces[1]"
         @click="addToPuzzle(1)"
         class="w-auto h-32"
         src="../assets/piece-3.png"
+        alt="slider piece 2"
       />
       <img
         v-if="!pieces[2]"
         @click="addToPuzzle(2)"
         class="w-auto h-32"
         src="../assets/piece-2.png"
+        alt="slider piece 3"
       />
       <img
         v-if="!pieces[3]"
         @click="addToPuzzle(3)"
         class="w-auto h-32"
         src="../assets/piece-4.png"
+        alt="slider piece 4"
       />
     </div>
     <ConfettiExplosion

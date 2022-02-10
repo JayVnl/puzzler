@@ -5,7 +5,7 @@
       class="absolute flex flex-col items-center right-6 bottom-6 p-2 rounded-xl border-b-4"
       :class="countPieces > 3 ? 'bg-[#6DE287] border-b-[#69D981] text-white' : 'bg-white border-b-[#D3D3D3]'"
     >
-      <img src="../assets/puzzle-icon.png" />
+      <img src="../assets/puzzle-icon.png" alt="puzzle-icon" />
       <p class="text-xl font-medium">{{ countPieces }}/4</p>
     </div>
     <div
@@ -30,7 +30,7 @@
       class="bg-white flex flex-col absolute left-1/2 top-1/2 w-10/12 h-auto -translate-y-1/2 -translate-x-1/2 px-6 py-4"
     >
       <p class="text-xl font-medium mb-4">You found piece number {{ pieceNumber }}!</p>
-      <img :src="pieces[pieceNumber - 1]" class="w-full h-auto mb-5" />
+      <img :src="pieces[pieceNumber - 1]" class="w-full h-auto mb-5" alt="piece popup" />
       <button v-if="countPieces != 4" @click="closePopup" class="bg-gray-200 py-3 rounded-lg">Close</button>
       <button v-else @click="toPuzzlePage" class="bg-gray-200 py-3 rounded-lg">Form the puzzle</button>
     </div>
