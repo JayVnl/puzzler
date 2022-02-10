@@ -1,5 +1,9 @@
 import { createWebHistory, createRouter } from 'vue-router';
 import Main from '../views/Main.vue';
+import Guide from '../views/Guide.vue';
+import Setup from '../views/Setup.vue';
+import Camera from '../views/Camera.vue';
+import Puzzle from '../views/Puzzle.vue';
 
 const routes = [
   {
@@ -8,19 +12,24 @@ const routes = [
     component: Main
   },
   {
+    path: '/guide',
+    name: 'Guide',
+    component: Guide
+  },
+  {
     path: '/setup',
     name: 'Setup',
-    component: () => import('../views/Setup.vue')
+    component: Setup
   },
   {
     path: '/camera',
     name: 'Camera',
-    component: () => import('../views/Camera.vue')
+    component: Camera
   },
   {
     path: '/puzzle',
     name: 'Puzzle',
-    component: () => import('../views/Puzzle.vue')
+    component: Puzzle
   }
 ];
 
