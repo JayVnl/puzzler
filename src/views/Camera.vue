@@ -10,12 +10,12 @@
     </div>
     <div
       v-if="isQrDecoded"
-      class="bg-white flex flex-col absolute left-1/2 top-1/2 w-9/12 h-auto -translate-y-1/2 -translate-x-1/2 px-6 py-4"
+      class="bg-white flex flex-col absolute left-1/2 top-1/2 w-10/12 h-auto -translate-y-1/2 -translate-x-1/2 px-6 py-4"
     >
       <p class="text-xl font-medium mb-4">You found piece number {{ pieceNumber }}!</p>
       <img :src="pieces[pieceNumber - 1]" class="w-full h-auto mb-5" />
-      <button v-if="countPieces != 4" @click="closePopup" class="bg-gray-200 py-3">Close</button>
-      <button v-else @click="toPuzzlePage" class="bg-gray-200 py-3">Form the puzzle</button>
+      <button v-if="countPieces != 4" @click="closePopup" class="bg-gray-200 py-3 rounded-lg">Close</button>
+      <button v-else @click="toPuzzlePage" class="bg-gray-200 py-3 rounded-lg">Form the puzzle</button>
     </div>
   </div>
 </template>

@@ -19,7 +19,10 @@
       />
     </div>
     <div class="grow"></div>
-    <div class="flex space-x-4 overflow-x-scroll overflow-visible overflow-y-hidden px-6">
+    <div
+      class="flex space-x-4 overflow-x-scroll overflow-visible overflow-y-hidden px-6 transition-all duration-500"
+      :class="complete ? 'h-0' : 'h-32'"
+    >
       <img
         v-if="!pieces[0]"
         @click="addToPuzzle(0)"
@@ -45,13 +48,24 @@
         src="../assets/piece-4.png"
       />
     </div>
+    <ConfettiExplosion
+      v-if="complete"
+      class="absolute left-1/2 top-14 -translate-x-1/2"
+      :particleCount="150"
+      :force="0.3"
+      :stageHeight="1000"
+    />
   </div>
 </template>
 
 <script>
+import ConfettiExplosion from "vue-confetti-explosion";
+
 export default {
+  components: { ConfettiExplosion },
   data() {
     return {
+      complete: false,
       pieces: [
         false,
         false,
@@ -63,6 +77,7 @@ export default {
   methods: {
     addToPuzzle(index) {
       this.pieces[index] = true;
+      this.complete = this.pieces.every(el => el == true);
     }
   }
 }

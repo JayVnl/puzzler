@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "vue": "^3.2.25",
+    "vue-confetti-explosion": "^1.0.1",
     "vue-router": "4",
     "vue3-qrcode-reader": "^0.0.1"
   },
