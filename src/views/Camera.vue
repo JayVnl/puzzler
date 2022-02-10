@@ -1,12 +1,18 @@
 <template>
   <div class="h-full w-full">
     <qrcode-stream @decode="onDecode" @init="onInit" />
-    <div></div>
+    <div
+      class="absolute flex flex-col items-center right-6 bottom-6 p-2 rounded-xl"
+      :class="countPieces > 3 ? 'bg-[#6DE287]' : 'bg-white'"
+    >
+      <img src="../assets/puzzle-icon.png" />
+      <p class="text-xl font-medium">{{ countPieces }}/4</p>
+    </div>
     <div
       v-if="isQrDecoded"
       class="bg-white flex flex-col absolute left-1/2 top-1/2 w-9/12 h-auto -translate-y-1/2 -translate-x-1/2 px-6 py-4"
     >
-      <p class="text-xl font-medium mb-4">You found piece number {{ pieceNumber }}</p>
+      <p class="text-xl font-medium mb-4">You found piece number {{ pieceNumber }}!</p>
       <img :src="pieces[pieceNumber - 1]" class="w-full h-auto mb-5" />
       <button v-if="countPieces != 4" @click="closePopup" class="bg-gray-200 py-3">Close</button>
       <button v-else @click="toPuzzlePage" class="bg-gray-200 py-3">Form the puzzle</button>
@@ -15,7 +21,7 @@
 </template>
 
 <script>
-import { QrcodeStream } from 'vue3-qrcode-reader'
+import { QrcodeStream } from 'vue3-qrcode-reader';
 import firstPiece from '../assets/piece-1.png';
 import secondPiece from '../assets/piece-2.png';
 import thirdPiece from '../assets/piece-3.png';
