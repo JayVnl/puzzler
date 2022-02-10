@@ -2,8 +2,8 @@
   <div class="h-full w-full">
     <qrcode-stream @decode="onDecode" @init="onInit" />
     <div
-      class="absolute flex flex-col items-center right-6 bottom-6 p-2 rounded-xl"
-      :class="countPieces > 3 ? 'bg-[#6DE287]' : 'bg-white'"
+      class="absolute flex flex-col items-center right-6 bottom-6 p-2 rounded-xl border-b-4"
+      :class="countPieces > 3 ? 'bg-[#6DE287] border-b-[#69D981] text-white' : 'bg-white border-b-[#D3D3D3]'"
     >
       <img src="../assets/puzzle-icon.png" />
       <p class="text-xl font-medium">{{ countPieces }}/4</p>
